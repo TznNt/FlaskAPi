@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Escolar</title>
+    <link "stylesheet" href="estilo.css">
+</head>
+<body>
+    <h1>Gestão Escolar</h1>
+
+    <!-- Professores -->
+    <section>
+        <h2>Professores</h2>
+        
+        <!-- Listar Professores -->
+        <form action="{{ url_for('school.get_professores') }}" method="get">
+            <button type="submit">Listar Professores</button>
+        </form>
+
+        <!-- Consultar Professor por ID -->
+        <form action="{{ url_for('school.get_professor', id=0) }}" method="get">
+            <label for="professor_id">ID do Professor:</label>
+            <input type="number" name="id" id="professor_id" required>
+            <button type="submit">Consultar Professor</button>
+        </form>
+
+        <!-- Criar Professor -->
+        <form action="{{ url_for('school.create_professor') }}" method="post">
+            <label>Nome:</label><input type="text" name="nome" required><br>
+            <label>Idade:</label><input type="number" name="idade" required><br>
+            <label>Matéria:</label><input type="text" name="materia" required><br>
+            <label>Observações:</label><input type="text" name="observacoes"><br>
+            <button type="submit">Criar Professor</button>
+        </form>
+
+        <!-- Atualizar Professor -->
+        <form action="{{ url_for('school.update_professor', id=0) }}" method="post">
+            <input type="hidden" name="_method" value="PUT">
+            <label>ID do Professor:</label><input type="number" name="id" required><br>
+            <label>Nome:</label><input type="text" name="nome"><br>
+            <label>Idade:</label><input type="number" name="idade"><br>
+            <label>Matéria:</label><input type="text" name="materia"><br>
+            <label>Observações:</label><input type="text" name="observacoes"><br>
+            <button type="submit">Atualizar Professor</button>
+        </form>
+
+        <!-- Excluir Professor -->
+        <form action="{{ url_for('school.delete_professor', id=0) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <label>ID do Professor:</label><input type="number" name="id" required><br>
+            <button type="submit">Excluir Professor</button>
+        </form>
+    </section>
+
+    <!-- Turmas -->
+    <section>
+        <h2>Turmas</h2>
+        
+        <!-- Listar Turmas -->
+        <form action="{{ url_for('school.get_turmas') }}" method="get">
+            <button type="submit">Listar Turmas</button>
+        </form>
+
+        <!-- Consultar Turma por ID -->
+        <form action="{{ url_for('school.get_turma', id=0) }}" method="get">
+            <label for="turma_id">ID da Turma:</label>
+            <input type="number" name="id" id="turma_id" required>
+            <button type="submit">Consultar Turma</button>
+        </form>
+
+        <!-- Criar Turma -->
+        <form action="{{ url_for('school.create_turma') }}" method="post">
+            <label>Descrição:</label><input type="text" name="descricao" required><br>
+            <label>Ativo:</label><input type="checkbox" name="ativo" checked><br>
+            <label>ID do Professor:</label><input type="number" name="professor_id" required><br>
+            <button type="submit">Criar Turma</button>
+        </form>
+
+        <!-- Atualizar Turma -->
+        <form action="{{ url_for('school.update_turma', id=0) }}" method="post">
+            <input type="hidden" name="_method" value="PUT">
+            <label>ID da Turma:</label><input type="number" name="id" required><br>
+            <label>Descrição:</label><input type="text" name="descricao"><br>
+            <label>Ativo:</label><input type="checkbox" name="ativo"><br>
+            <label>ID do Professor:</label><input type="number" name="professor_id"><br>
+            <button type="submit">Atualizar Turma</button>
+        </form>
+
+        <!-- Excluir Turma -->
+        <form action="{{ url_for('school.delete_turma', id=0) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <label>ID da Turma:</label><input type="number" name="id" required><br>
+            <button type="submit">Excluir Turma</button>
+        </form>
+    </section>
+
+    <!-- Alunos -->
+    <section>
+        <h2>Alunos</h2>
+        
+        <!-- Listar Alunos -->
+        <form action="{{ url_for('school.get_alunos') }}" method="get">
+            <button type="submit">Listar Alunos</button>
+        </form>
+
+        <!-- Consultar Aluno por ID -->
+        <form action="{{ url_for('school.get_aluno', id=0) }}" method="get">
+            <label for="aluno_id">ID do Aluno:</label>
+            <input type="number" name="id" id="aluno_id" required>
+            <button type="submit">Consultar Aluno</button>
+        </form>
+
+        <!-- Criar Aluno -->
+        <form action="{{ url_for('school.create_aluno') }}" method="post">
+            <label>Nome:</label><input type="text" name="nome" required><br>
+            <label>Idade:</label><input type="number" name="idade" required><br>
+            <label>Data de Nascimento:</label><input type="date" name="data_nascimento" required><br>
+            <label>ID da Turma:</label><input type="number" name="turma_id" required><br>
+            <button type="submit">Criar Aluno</button>
+        </form>
+
+        <!-- Atualizar Aluno -->
+        <form action="{{ url_for('school.update_aluno', id=0) }}" method="post">
+            <input type="hidden" name="_method" value="PUT">
+            <label>ID do Aluno:</label><input type="number" name="id" required><br>
+            <label>Nome:</label><input type="text" name="nome"><br>
+            <label>Idade:</label><input type="number" name="idade"><br>
+            <label>ID da Turma:</label><input type="number" name="turma_id"><br>
+            <button type="submit">Atualizar Aluno</button>
+        </form>
+
+        <!-- Excluir Aluno -->
+        <form action="{{ url_for('school.delete_aluno', id=0) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <label>ID do Aluno:</label><input type="number" name="id" required><br>
+            <button type="submit">Excluir Aluno</button>
+        </form>
+    </section>
+
+</body>
+</html>

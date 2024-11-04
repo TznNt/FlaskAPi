@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "93f73d10-60ae-44ba-a812-430bfbee250b",
+		"name": "School API Tests",
+		"description": "Collection of tests for the School API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31362639"
+	},
+	"item": [
+		{
+			"name": "Get All Professores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/school/professores"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Professor by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/school/professor?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"school",
+						"professor"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Professor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nome",
+							"value": "Professor Teste",
+							"type": "text"
+						},
+						{
+							"key": "idade",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "materia",
+							"value": "Matemática",
+							"type": "text"
+						},
+						{
+							"key": "observacoes",
+							"value": "Nenhuma",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/school/professores"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Professor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "nome",
+							"value": "Professor Atualizado",
+							"type": "text"
+						},
+						{
+							"key": "_method",
+							"value": "PUT",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/school/professores/update"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Professor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "_method",
+							"value": "DELETE",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/school/professores/delete"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Turmas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/school/turmas"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Turma by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/school/turma?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"school",
+						"turma"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Turma",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "descricao",
+							"value": "Turma de Teste",
+							"type": "text"
+						},
+						{
+							"key": "ativo",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "professor_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/school/turmas"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Turma",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "descricao",
+							"value": "Turma Atualizada",
+							"type": "text"
+						},
+						{
+							"key": "ativo",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "_method",
+							"value": "PUT",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/school/turmas/update"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Turma",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "_method",
+							"value": "DELETE",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/school/turmas/delete"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Alunos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/school/alunos"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Aluno by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/school/aluno?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"school",
+						"aluno"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Aluno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nome",
+							"value": "Aluno Teste",
+							"type": "text"
+						},
+						{
+							"key": "idade",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "data_nascimento",
+							"value": "2013-01-01",
+							"type": "text"
+						},
+						{
+							"key": "turma_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/school/alunos"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Aluno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "nome",
+							"value": "Aluno Atualizado",
+							"type": "text"
+						},
+						{
+							"key": "turma_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "_method",
+							"value": "PUT",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/school/alunos/update"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Aluno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "_method",
+							"value": "DELETE",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8000/school/alunos/delete"
+			},
+			"response": []
+		}
+	]
+}
